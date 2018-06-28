@@ -1,0 +1,41 @@
+!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" 
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+
+</head>
+<body>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Codigo</th>
+      <th scope="col">Nome</th>
+      <th scope="col">cpf</th>
+      <th scope="col">Data Nascimento</th>
+      <th scope="col">endereco</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td th:text="${pessoa.id}"></td>
+      <td th:text="${pessoa.nome}"></td>
+      <td th:text = "${pessoa.cpf}"></td>
+      <td th:text="${{pessoa.dataNascimento}}"></td>
+      <td th:text="${pessoa.endereco}"> </td>
+    </tr>
+  </tbody>
+</table>
+</body>
+
+<script src="/js/bootstrap.min.js">  </script>
+<footer class="page-footer font-small blue-grey lighten-5 mt-4">
+	<div class="footer-copyright text-center text-black-50 py-3">© 2018 Copyright:
+    <a class="dark-grey-text"> Mada Instrumentos | Bruno da Silva Pinho. | (88)992053421</h5> </a>
+  </div>
+	  
+</footer>
+</html>

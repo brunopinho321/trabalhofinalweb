@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+<script src="/js/jquery.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</head>
+
+
+
+
+<body class="bg-light">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" th:href="@{/sonic/listar/instrumento2}">Inicio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" th:href="@{/pessoa/formulario}" sec:authorize="!(isAuthenticated())">Cadastro</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" th:href="@{/sonic/listar/instrumento}" sec:authorize="hasRole('ROLE_ADMIN')">Cadastrar Instrumentos</a>
+    </li>
+    <li class="nav-item" style="float: right; right: 0; position: absolute;">
+      <a class="nav-link active" th:href="@{/pessoa/logar}" sec:authorize="!(isAuthenticated())">Logar-se</a>
+    </li>
+     <li class="nav-item" style="float: right; right: 0; position: absolute;">
+      <a class="nav-link"  th:href="@{/pessoa/logout}" sec:authorize="isAuthenticated()">Sair</a>
+    </li>
+    
+  </ul>
+</nav>
+
+
+<br>
+<br>
+<br>
+<div class="card" style=" width: 50%; margin: 0 auto;">
+<form method="POST" action="/pessoa/logar" style="width: 50%; margin: 0 auto;" >
+
+<div class="form-group">
+    <label for="exampleInputEmail1">Usuário:</label>
+    <input type="text" class="form-control" id="nome" name="username">  
+ </div>
+
+<div class="form-group">
+    <label for="exampleInputEmail1">Senha:</label>
+    <input type="password" class="form-control" id="password" name="password">  
+ </div> 
+<center>
+<input type="submit" value="Logar" >
+</center>
+</form>
+<br>
+<br>
+<br>
+<a th:href="@{/pessoa/formulario}" style="text-align: center;">Cadastra-se</a>
+</div>
+</body>
+<footer class="page-footer font-small blue-grey lighten-5 mt-4">
+	<div class="footer-copyright text-center text-black-50 py-3">© 2018 Copyright:
+    <a class="dark-grey-text"> Mada Instrumentos | Bruno da Silva Pinho. | (88)992053421</h5> </a>
+  </div>
+	  
+</footer>
+</html>
